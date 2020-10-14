@@ -3,18 +3,22 @@ import './Contact.css';
 import PropTypes from 'prop-types';
 
 class Contact extends Component {
-    constructor({name, avatar, online}) {
-        super({name, avatar, online});
+    constructor(props) {
+        super(props);
         this.state = {
             online: false,
          };
     }
     render() {
+        const{
+            avatar,
+            name,
+        }=this.props;
         return (
             <div className='Contact'>
-                <img className="avatar" src={this.props.avatar} alt={this.props.name}/>
+                <img className="avatar" src={avatar} alt={name}/>
                 <div className='status'>
-                    <h4 className='name'>{this.props.name}</h4>
+                    <h4 className='name'>{name}</h4>
                     <div onClick={
                         (event) =>{
                             const newStatus= !this.state.online;

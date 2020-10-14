@@ -5,7 +5,9 @@ import Contact from './Contact';
 const ContactList = ({users}) => {
     return (
         users.map(user => (
-            <Contact {...user}/>
+            <li key={user.name}>
+                <Contact {...user}/>
+            </li>
         ))
     )
 };
